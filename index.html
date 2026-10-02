@@ -1,0 +1,1986 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Energia solar em Palmas | Gold Soluções</title>
+    <meta name="description" content="Projeto e instalação de energia solar para residências e empresas no Tocantins.">
+    <link rel="preload" href="assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300 800;
+        font-display: swap;
+        src: url('assets/inter-latin.woff2') format('woff2');
+      }
+
+      :root {
+        --color-yellow: #F5C400;
+        --color-yellow-dark: #D4A800;
+        --color-black: #1A1A1A;
+        --color-black-soft: #222222;
+        --color-gray-dark: #2E2E2E;
+        --color-gray-mid: #555555;
+        --color-gray-light: #F4F4F4;
+        --color-white: #FFFFFF;
+        --color-primary: var(--color-yellow);
+        --color-bg: var(--color-black);
+        --color-surface: var(--color-black-soft);
+        --color-text: var(--color-white);
+        --color-text-muted: rgba(255,255,255,0.55);
+        --color-border: rgba(255,255,255,0.08);
+        --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --text-xs: 0.75rem;
+        --text-sm: 0.875rem;
+        --text-base: 1rem;
+        --text-lg: 1.125rem;
+        --text-xl: 1.25rem;
+        --text-2xl: 1.5rem;
+        --text-3xl: 2rem;
+        --text-4xl: 2.75rem;
+        --text-5xl: 3.5rem;
+        --weight-light: 300;
+        --weight-regular: 400;
+        --weight-medium: 500;
+        --weight-semibold: 600;
+        --weight-bold: 700;
+        --weight-extrabold: 800;
+        --leading-tight: 1.15;
+        --leading-body: 1.65;
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
+        --space-24: 6rem;
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --transition-fast: 150ms ease;
+        --transition-normal: 300ms ease;
+        --transition-slow: 600ms ease-out;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--color-yellow);
+        outline-offset: 5px;
+      }
+
+      section {
+        scroll-margin-top: 112px;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 8px;
+        left: 16px;
+        z-index: 60;
+        padding: 12px 16px;
+        background: var(--color-yellow);
+        color: var(--color-black);
+        transform: translateY(-160%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font);
+        font-size: var(--text-base);
+        line-height: var(--leading-body);
+        text-rendering: optimizeLegibility;
+      }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img,
+      svg {
+        display: block;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .site-shell {
+        width: min(100% - 40px, 1160px);
+        margin-inline: auto;
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 50;
+        transition: background var(--transition-normal), box-shadow var(--transition-normal), backdrop-filter var(--transition-normal);
+      }
+
+      .site-header.is-scrolled {
+        background: rgba(26, 26, 26, 0.95);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
+        min-height: 96px;
+        align-items: center;
+        gap: var(--space-6);
+      }
+
+      .nav-wrap > .brand-link {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
+      }
+
+      .nav-wrap > .menu-toggle,
+      .nav-wrap > .nav-cta {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+      }
+
+      .brand-link {
+        display: inline-flex;
+        width: 120px;
+        height: 80px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        /* Oculta a antiga linha de serviços sem alterar o arquivo da marca. */
+        clip-path: inset(0 0 8% 0);
+      }
+
+      .desktop-nav {
+        display: none;
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-2);
+      }
+
+      .desktop-nav a,
+      .mobile-panel a {
+        min-height: 44px;
+        padding: 10px 8px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-semibold);
+        transition: color var(--transition-fast);
+      }
+
+      .desktop-nav a:hover,
+      .desktop-nav a:focus-visible,
+      .mobile-panel a:hover,
+      .mobile-panel a:focus-visible {
+        color: var(--color-yellow);
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border: 0;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--color-white);
+        cursor: pointer;
+      }
+
+      .menu-lines {
+        position: relative;
+        width: 22px;
+        height: 14px;
+      }
+
+      .menu-lines::before,
+      .menu-lines::after {
+        position: absolute;
+        left: 0;
+        width: 22px;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        content: "";
+        transition: transform var(--transition-normal), top var(--transition-normal);
+      }
+
+      .menu-lines::before {
+        top: 1px;
+      }
+
+      .menu-lines::after {
+        top: 11px;
+      }
+
+      .menu-toggle[aria-expanded="true"] .menu-lines::before {
+        top: 6px;
+        transform: rotate(45deg);
+      }
+
+      .menu-toggle[aria-expanded="true"] .menu-lines::after {
+        top: 6px;
+        transform: rotate(-45deg);
+      }
+
+      .mobile-panel {
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+        display: grid;
+        place-items: center;
+        background: rgba(26, 26, 26, 0.98);
+        padding: 104px 24px 80px;
+        overflow-y: auto;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity var(--transition-normal), transform var(--transition-normal);
+      }
+
+      .mobile-panel.is-open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .mobile-panel nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+      }
+
+      .mobile-panel a {
+        font-size: var(--text-xl);
+        color: var(--color-white);
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        overflow: hidden;
+        min-height: 100dvh;
+        padding: 132px 0 var(--space-6);
+        background: var(--color-black);
+        isolation: isolate;
+      }
+
+      .hero-background,
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-background {
+        z-index: -2;
+      }
+
+      .hero-background-photo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .hero::before {
+        z-index: -1;
+        background: rgba(10, 10, 10, 0.60);
+        content: "";
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        width: min(100% - 40px, 1160px);
+        margin-inline: auto;
+        gap: var(--space-6);
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-copy {
+        position: relative;
+        isolation: isolate;
+        min-width: 0;
+        width: 100%;
+        max-width: 730px;
+        margin-inline: auto;
+      }
+
+      .hero h1 {
+        max-width: 780px;
+        margin: 0 auto;
+        font-size: 38px;
+        font-weight: var(--weight-extrabold);
+        letter-spacing: 0;
+        line-height: 1.12;
+      }
+
+      .hero h1 .hero-highlight {
+        color: var(--color-yellow);
+      }
+
+      .hero-line {
+        display: block;
+      }
+
+      .hero .eyebrow {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding: 6px 10px;
+        border: 1px solid rgba(245, 196, 0, 0.6);
+        border-radius: 6px;
+        font-size: 11px;
+        letter-spacing: 0;
+        line-height: 1.5;
+      }
+
+      .eyebrow {
+        display: block;
+        margin: 0 0 var(--space-4);
+        color: var(--color-yellow);
+        font-size: var(--text-xs);
+        font-weight: var(--weight-semibold);
+        line-height: 1.65;
+        text-transform: uppercase;
+      }
+
+      .hero .hero-description {
+        max-width: 560px;
+        margin: var(--space-6) auto 0;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: var(--text-base);
+        font-weight: var(--weight-regular);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-4);
+        margin-top: var(--space-6);
+      }
+
+      .hero .primary-cta {
+        min-height: 52px;
+        border: 0;
+        border-radius: var(--radius-lg);
+        box-shadow: 0 6px 24px rgba(245, 196, 0, 0.12);
+      }
+
+      .hero-actions .primary-cta {
+        width: calc(100% - 64px);
+      }
+
+      .hero-projects-cta {
+        display: inline-flex;
+        width: calc(100% - 88px);
+        max-width: 232px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        border-radius: var(--radius-lg);
+        background: var(--color-white);
+        color: var(--color-black);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-semibold);
+        line-height: 1.3;
+        text-align: center;
+        transition: background var(--transition-normal), transform var(--transition-normal);
+      }
+
+      .hero-projects-cta:hover,
+      .hero-projects-cta:focus-visible {
+        background: var(--color-gray-light);
+        transform: translateY(-2px);
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-3);
+        max-width: 520px;
+        margin: var(--space-8) auto 0;
+      }
+
+      .hero-stat dt {
+        order: 2;
+        margin-top: var(--space-2);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 10px;
+        font-weight: var(--weight-medium);
+        line-height: 1.5;
+      }
+
+      .hero-stat dd {
+        order: 1;
+        margin: 0;
+        color: var(--color-yellow);
+        font-size: 30px;
+        font-weight: var(--weight-extrabold);
+        line-height: 1.15;
+      }
+
+      .hero-stat {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+
+      .hero-quote {
+        min-width: 0;
+        width: calc(100% - 64px);
+        max-width: 410px;
+        margin-inline: auto;
+        text-align: left;
+        padding: 22px 20px;
+        border: 1px solid rgba(245, 196, 0, 0.35);
+        border-radius: 16px;
+        background: rgba(26, 26, 26, 0.92);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(4px);
+      }
+
+      .hero-quote h2 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.3;
+      }
+
+      .hero-quote .hero-form-intro {
+        margin: var(--space-2) 0 var(--space-6);
+        color: var(--color-yellow);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .hero-field-label {
+        display: block;
+        margin-bottom: var(--space-2);
+        padding: 0;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 10px;
+        font-weight: var(--weight-semibold);
+        line-height: 1.5;
+      }
+
+      .hero-name {
+        width: 100%;
+        height: 48px;
+        padding: 0 12px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--color-white);
+        font: inherit;
+        font-size: 16px;
+      }
+
+      .hero-name::placeholder {
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 13px;
+      }
+
+      .hero-services {
+        min-width: 0;
+        margin: var(--space-6) 0;
+        padding: 0;
+        border: 0;
+      }
+
+      .hero-quote .primary-cta {
+        width: 100%;
+        padding-inline: 10px;
+        font: inherit;
+        font-size: 13px;
+        font-weight: var(--weight-bold);
+        cursor: pointer;
+      }
+
+      .hero-quote .hero-form-note {
+        margin: var(--space-4) 0 0;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 11px;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .hero-payment-bar {
+        min-width: 0;
+        width: 100%;
+        margin-top: var(--space-2);
+        padding: 20px;
+        border: 1px solid rgba(245, 196, 0, 0.18);
+        border-radius: 16px;
+        background: rgba(10, 10, 10, 0.78);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+        text-align: left;
+      }
+
+      .hero-payment-label {
+        margin: 0 0 var(--space-4);
+        color: var(--color-yellow);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-semibold);
+        line-height: 1.4;
+      }
+
+      .hero-payment-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-6) var(--space-4);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hero-payment-list li {
+        display: grid;
+        grid-template-rows: 24px auto;
+        align-content: start;
+        gap: 10px;
+        min-width: 0;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-medium);
+        line-height: 1.5;
+      }
+
+      .payment-icon {
+        display: block;
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.75;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .hero-payment-list .payment-icon {
+        color: var(--color-yellow);
+      }
+
+      @media (min-width: 980px) {
+        .hero-payment-list {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: var(--space-6);
+        }
+      }
+
+      .primary-cta,
+      .dark-cta {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-2);
+        border-radius: var(--radius-lg);
+        font-weight: var(--weight-bold);
+        line-height: 1.1;
+        transition: background var(--transition-normal), color var(--transition-normal), transform var(--transition-normal);
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .whatsapp-mark {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 auto;
+      }
+
+      .primary-cta {
+        padding: 14px 28px;
+        background: var(--color-yellow);
+        color: var(--color-black);
+      }
+
+      .primary-cta:hover,
+      .primary-cta:focus-visible {
+        background: var(--color-yellow-dark);
+        transform: translateY(-2px);
+      }
+
+      .nav-cta {
+        display: none;
+        flex: 0 0 auto;
+        padding: 12px 16px;
+        font-size: var(--text-sm);
+      }
+
+      .scroll-indicator {
+        position: relative;
+        display: block;
+        width: 44px;
+        height: 44px;
+        margin: var(--space-6) auto 0;
+        animation: floatDown 1.6s ease-in-out infinite;
+      }
+
+      .scroll-indicator::before {
+        position: absolute;
+        top: 11px;
+        left: 15px;
+        width: 12px;
+        height: 12px;
+        border-right: 2px solid var(--color-yellow);
+        border-bottom: 2px solid var(--color-yellow);
+        content: "";
+        transform: rotate(45deg);
+      }
+
+      @keyframes floatDown {
+        0%,
+        100% {
+          translate: 0 0;
+        }
+
+        50% {
+          translate: 0 8px;
+        }
+      }
+
+      .section {
+        padding: var(--space-16) 0;
+      }
+
+      .section.surface {
+        background: var(--color-surface);
+      }
+
+      .section-heading {
+        max-width: 680px;
+        margin: 0 0 var(--space-12);
+        text-align: left;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        color: var(--color-white);
+        font-size: var(--text-3xl);
+        font-weight: var(--weight-bold);
+        letter-spacing: 0;
+        line-height: var(--leading-tight);
+      }
+
+      .section-heading p {
+        margin: var(--space-3) 0 0;
+        color: var(--color-text-muted);
+        font-size: var(--text-base);
+      }
+
+      .text-link {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        gap: var(--space-2);
+        color: var(--color-yellow);
+        font-weight: var(--weight-semibold);
+        line-height: 1.5;
+        transition: color var(--transition-fast);
+      }
+
+      .text-link:hover {
+        color: var(--color-white);
+      }
+
+      .text-link .arrow {
+        flex: 0 0 auto;
+        transition: transform var(--transition-fast);
+      }
+
+      .text-link:hover .arrow {
+        transform: translateX(4px);
+      }
+
+      .photo-frame {
+        position: relative;
+        display: grid;
+        width: 100%;
+        overflow: hidden;
+        place-items: center;
+        background: var(--color-black);
+        aspect-ratio: 4 / 3;
+      }
+
+      .photo-frame img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .section-tail {
+        margin-top: var(--space-8);
+      }
+
+      .projects-grid {
+        display: grid;
+        gap: var(--space-4);
+      }
+
+      .project-cell {
+        min-width: 0;
+      }
+
+      .project-cell .photo-frame {
+        aspect-ratio: 16 / 9;
+        outline: 1px solid var(--color-border);
+        outline-offset: -1px;
+        border-radius: var(--radius-sm);
+      }
+
+      .project-caption {
+        padding-top: var(--space-4);
+      }
+
+      .project-category {
+        display: block;
+        color: var(--color-yellow);
+        font-size: var(--text-xs);
+        font-weight: var(--weight-medium);
+      }
+
+      .project-caption h3 {
+        margin: var(--space-1) 0 0;
+        font-size: var(--text-lg);
+        font-weight: var(--weight-semibold);
+      }
+
+      .project-placeholder {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-4);
+      }
+
+      .project-placeholder::before {
+        width: 3px;
+        height: 40px;
+        border-radius: 999px;
+        background: var(--color-yellow);
+        content: "";
+      }
+
+      .project-placeholder span {
+        color: var(--color-yellow);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-medium);
+        letter-spacing: 0;
+      }
+
+      .solar-layout {
+        display: grid;
+        gap: var(--space-12);
+        align-items: start;
+      }
+
+      .solar-layout .section-heading {
+        margin-bottom: 0;
+      }
+
+      .benefits-list {
+        display: grid;
+        gap: var(--space-8);
+      }
+
+      .benefit-item {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: var(--space-4);
+        padding-top: var(--space-6);
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .benefit-number {
+        color: var(--color-yellow);
+        font-size: var(--text-4xl);
+        font-weight: var(--weight-light);
+        line-height: 1;
+      }
+
+      .benefit-item h3 {
+        margin: 0;
+        color: var(--color-white);
+        font-size: var(--text-xl);
+        font-weight: var(--weight-bold);
+        line-height: var(--leading-tight);
+      }
+
+      .benefit-item p {
+        margin: var(--space-3) 0 0;
+        color: var(--color-text-muted);
+      }
+
+      .testimonials-section {
+        background: var(--color-gray-light);
+        color: var(--color-black);
+      }
+
+      .testimonials-section .eyebrow {
+        margin-bottom: var(--space-2);
+        color: #8C6F00;
+      }
+
+      .testimonials-section .section-heading {
+        margin-inline: auto;
+        margin-bottom: var(--space-8);
+        text-align: center;
+      }
+
+      .testimonials-section .section-heading h2 {
+        color: var(--color-black);
+        font-size: var(--text-2xl);
+        font-weight: var(--weight-extrabold);
+        text-wrap: balance;
+      }
+
+      .testimonials-section .section-heading h2 span {
+        color: #8C6F00;
+      }
+
+      .testimonials-section .section-heading p {
+        max-width: 520px;
+        margin-inline: auto;
+        color: var(--color-gray-mid);
+      }
+
+      .testimonials-section .section-tail {
+        text-align: center;
+      }
+
+      .testimonials-section .text-link {
+        color: var(--color-black);
+        text-decoration: underline;
+        text-decoration-color: var(--color-yellow);
+        text-underline-offset: 6px;
+      }
+
+      .testimonials-section :focus-visible {
+        outline-color: var(--color-black);
+      }
+
+      .testimonials-grid {
+        display: grid;
+        gap: var(--space-6);
+      }
+
+      .testimonial-card {
+        display: flex;
+        min-width: 0;
+        min-height: 240px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(26, 26, 26, 0.05);
+        background: var(--color-white);
+        padding: var(--space-6);
+        box-shadow: 0 3px 14px rgba(26, 26, 26, 0.05);
+      }
+
+      .testimonial-card-head {
+        display: flex;
+        width: 100%;
+        min-height: 24px;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        margin-bottom: var(--space-4);
+      }
+
+      .testimonial-quotation {
+        margin-left: auto;
+        color: var(--color-yellow);
+        font-size: 48px;
+        font-weight: var(--weight-extrabold);
+        line-height: 0.5;
+        opacity: 0.25;
+      }
+
+      .testimonial-stars {
+        display: flex;
+        gap: var(--space-1);
+        color: var(--color-yellow);
+      }
+
+      .testimonial-stars svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .testimonial-card blockquote {
+        margin: 0 0 var(--space-6);
+        color: var(--color-gray-mid);
+        font-size: var(--text-sm);
+        line-height: 1.75;
+        overflow-wrap: anywhere;
+      }
+
+      .testimonial-card blockquote p {
+        margin: 0;
+      }
+
+      .testimonial-card--pending {
+        min-height: 176px;
+      }
+
+      .testimonial-card--pending p {
+        margin: auto 0;
+        color: var(--color-gray-mid);
+        font-size: var(--text-sm);
+        line-height: 1.75;
+      }
+
+      .testimonial-customer {
+        margin-top: auto;
+        font-size: var(--text-sm);
+        font-weight: var(--weight-bold);
+      }
+
+      .testimonial-context {
+        display: block;
+        color: var(--color-gray-mid);
+        font-size: var(--text-xs);
+      }
+
+      .final-cta {
+        background: var(--color-yellow);
+        color: var(--color-black);
+        padding: var(--space-16) 0;
+      }
+
+      .final-cta .site-shell {
+        display: grid;
+        gap: var(--space-8);
+        align-items: center;
+      }
+
+      .final-cta h2 {
+        max-width: 720px;
+        margin: 0;
+        color: var(--color-black);
+        font-size: var(--text-3xl);
+        font-weight: var(--weight-extrabold);
+        line-height: var(--leading-tight);
+      }
+
+      .final-cta p {
+        max-width: 560px;
+        margin: var(--space-4) 0 0;
+        color: rgba(26, 26, 26, 0.72);
+        font-size: var(--text-lg);
+      }
+
+      .dark-cta {
+        width: fit-content;
+        padding: 16px 32px;
+        background: var(--color-black);
+        color: var(--color-yellow);
+      }
+
+      .dark-cta:hover,
+      .dark-cta:focus-visible {
+        background: #000000;
+        transform: translateY(-2px);
+      }
+
+      .service-area {
+        margin-top: var(--space-3);
+        color: rgba(26, 26, 26, 0.6);
+        font-size: var(--text-sm);
+      }
+
+      .final-cta .eyebrow {
+        color: var(--color-black);
+        margin-bottom: var(--space-4);
+        font-size: var(--text-xs);
+      }
+
+      .final-cta .service-area {
+        font-size: var(--text-sm);
+      }
+
+      .final-cta :focus-visible {
+        outline-color: var(--color-black);
+      }
+
+      .final-action {
+        display: grid;
+        gap: var(--space-3);
+      }
+
+      .final-payment {
+        min-width: 0;
+        max-width: 400px;
+        padding-top: var(--space-4);
+        border-top: 1px solid rgba(26, 26, 26, 0.16);
+      }
+
+      .final-payment h3 {
+        margin: 0 0 var(--space-3);
+        color: rgba(26, 26, 26, 0.72);
+        font-size: var(--text-xs);
+        font-weight: var(--weight-semibold);
+        line-height: var(--leading-body);
+      }
+
+      .final-payment-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-3) var(--space-4);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .final-payment-list li {
+        display: grid;
+        grid-template-rows: 20px auto;
+        align-content: start;
+        gap: var(--space-2);
+        min-width: 0;
+        color: rgba(26, 26, 26, 0.8);
+        font-size: var(--text-sm);
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+      }
+
+      .final-payment-list .payment-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .footer {
+        background: #111111;
+        padding: var(--space-12) 0 96px;
+      }
+
+      .footer-grid {
+        display: grid;
+        gap: var(--space-8);
+      }
+
+      .footer-brand {
+        display: grid;
+        gap: var(--space-3);
+        max-width: 280px;
+      }
+
+      .footer-brand > .brand-link {
+        background: var(--color-white);
+      }
+
+      .footer-brand p,
+      .footer-bottom {
+        margin: 0;
+        color: var(--color-text-muted);
+        font-size: var(--text-sm);
+      }
+
+      .footer h3 {
+        margin: 0 0 var(--space-3);
+        color: var(--color-white);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-bold);
+        text-transform: uppercase;
+      }
+
+      .footer-links,
+      .contact-links {
+        display: grid;
+        gap: var(--space-2);
+      }
+
+      .footer-links a,
+      .contact-links a {
+        display: inline-flex;
+        min-height: 44px;
+        width: fit-content;
+        align-items: center;
+        gap: var(--space-3);
+        color: var(--color-text-muted);
+        transition: color var(--transition-fast);
+      }
+
+      .footer-links a:hover,
+      .footer-links a:focus-visible,
+      .contact-links a:hover,
+      .contact-links a:focus-visible {
+        color: var(--color-yellow);
+      }
+
+      .contact-links svg {
+        width: 20px;
+        height: 20px;
+        color: var(--color-yellow);
+      }
+
+      .footer-bottom {
+        margin-top: var(--space-8);
+        padding-top: var(--space-6);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 45;
+        display: inline-flex;
+        width: 56px;
+        height: 56px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        background: var(--color-yellow);
+        color: var(--color-black);
+        box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+        transition: background var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
+      }
+
+      .floating-whatsapp:hover,
+      .floating-whatsapp:focus-visible {
+        background: var(--color-yellow-dark);
+        box-shadow: 0 20px 46px rgba(0, 0, 0, 0.42);
+        transform: translateY(-3px);
+      }
+
+      .floating-whatsapp svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 600ms ease-out, transform 600ms ease-out;
+      }
+
+      .js .reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-group .reveal:nth-child(1) {
+        transition-delay: 0ms;
+      }
+
+      .reveal-group .reveal:nth-child(2) {
+        transition-delay: 80ms;
+      }
+
+      .reveal-group .reveal:nth-child(3) {
+        transition-delay: 160ms;
+      }
+
+      .reveal-group .reveal:nth-child(4) {
+        transition-delay: 240ms;
+      }
+
+      .reveal-group .reveal:nth-child(5) {
+        transition-delay: 320ms;
+      }
+
+      .reveal-group .reveal:nth-child(6) {
+        transition-delay: 400ms;
+      }
+
+      @media (max-width: 719px) {
+        body {
+          min-width: 0;
+        }
+
+        .section-heading,
+        .section-tail,
+        .project-caption,
+        .hero-payment-label,
+        .final-cta,
+        .footer {
+          text-align: center;
+        }
+
+        .section-heading {
+          margin-inline: auto;
+        }
+
+        .final-action,
+        .footer-grid,
+        .footer-brand,
+        .footer-links,
+        .contact-links {
+          justify-items: center;
+        }
+
+        .final-payment {
+          width: 100%;
+        }
+
+        .final-payment-list {
+          text-align: left;
+        }
+      }
+
+      @media (min-width: 720px) {
+        .site-shell {
+          width: min(100% - 64px, 1160px);
+        }
+
+        .hero-content {
+          width: min(100% - 64px, 1160px);
+          text-align: center;
+        }
+
+        .hero-copy,
+        .hero .hero-description {
+          margin-inline: auto;
+        }
+
+        .hero-actions {
+          align-items: center;
+        }
+
+        .hero h1 {
+          font-size: var(--text-4xl);
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: center;
+          gap: var(--space-6);
+        }
+
+        .hero-actions .primary-cta {
+          width: auto;
+        }
+
+        .hero-quote {
+          width: 100%;
+          padding: var(--space-8);
+        }
+
+        .hero-quote h2 {
+          font-size: 22px;
+        }
+
+        .hero-quote .primary-cta {
+          font-size: 14px;
+        }
+
+        .projects-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .testimonials-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .testimonials-section .section-heading h2 {
+          font-size: var(--text-3xl);
+        }
+
+        .testimonial-card {
+          padding: var(--space-8);
+        }
+
+        .footer-grid {
+          grid-template-columns: minmax(0, 1.2fr) minmax(160px, 0.6fr) minmax(180px, 0.7fr);
+        }
+      }
+
+      @media (min-width: 980px) {
+        .section {
+          padding: var(--space-24) 0;
+        }
+
+        .projects-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: var(--space-6);
+        }
+
+        .hero-content {
+          grid-template-columns: minmax(0, 1fr);
+          gap: var(--space-12);
+        }
+
+        .hero-background-photo {
+          object-position: center center;
+        }
+
+        .hero-quote {
+          justify-self: center;
+        }
+
+        .solar-layout {
+          grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+          gap: var(--space-24);
+        }
+
+        .benefit-item {
+          grid-template-columns: 72px minmax(0, 1fr);
+          gap: var(--space-6);
+        }
+
+        .benefit-number {
+          font-size: var(--text-5xl);
+        }
+
+        .testimonials-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .final-cta .site-shell {
+          grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+          gap: var(--space-24);
+        }
+
+        .final-cta {
+          padding: var(--space-24) 0;
+        }
+
+        .final-cta h2 {
+          font-size: var(--text-4xl);
+        }
+
+        .final-cta .service-area {
+          max-width: 290px;
+        }
+      }
+
+      @media (min-width: 1180px) {
+        .desktop-nav,
+        .nav-cta {
+          display: flex;
+        }
+
+        .menu-toggle,
+        .mobile-panel {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 48px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .site-shell,
+        .hero-content {
+          width: min(100% - 32px, 1160px);
+        }
+
+        .project-placeholder {
+          gap: var(--space-3);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
+      <defs>
+        <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+        </symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24">
+          <polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </symbol>
+        <!--
+          Lucide icons, ISC License.
+          Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as part of Feather (MIT).
+          All other copyright (c) for Lucide are held by Lucide Contributors 2022.
+          Permission to use, copy, modify, and/or distribute this software for any
+          purpose with or without fee is hereby granted, provided that the above
+          copyright notice and this permission notice appear in all copies.
+          THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+          WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+          MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+          ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+          WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+          ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+          OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+        -->
+        <symbol id="icon-financing" viewBox="0 0 24 24">
+          <line x1="3" x2="21" y1="22" y2="22"></line>
+          <line x1="6" x2="6" y1="18" y2="11"></line>
+          <line x1="10" x2="10" y1="18" y2="11"></line>
+          <line x1="14" x2="14" y1="18" y2="11"></line>
+          <line x1="18" x2="18" y1="18" y2="11"></line>
+          <polygon points="12 2 20 7 4 7"></polygon>
+        </symbol>
+        <symbol id="icon-grace-period" viewBox="0 0 24 24">
+          <path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"></path>
+          <path d="M16 2v4M8 2v4M3 10h5M17.5 17.5 16 16.3V14"></path>
+          <circle cx="16" cy="16" r="6"></circle>
+        </symbol>
+        <symbol id="icon-credit-card" viewBox="0 0 24 24">
+          <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+          <line x1="2" x2="22" y1="10" y2="10"></line>
+        </symbol>
+        <symbol id="icon-cash-payment" viewBox="0 0 24 24">
+          <rect width="20" height="12" x="2" y="6" rx="2"></rect>
+          <circle cx="12" cy="12" r="2"></circle>
+          <path d="M6 12h.01M18 12h.01"></path>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </symbol>
+      </defs>
+    </svg>
+    <header class="site-header" data-header>
+      <div class="site-shell nav-wrap">
+        <a class="brand-link" href="#inicio" aria-label="Gold Soluções, início">
+          <img class="logo-img" src="assets/logo.png" alt="Gold Soluções" width="120" height="80" fetchpriority="high">
+        </a>
+
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a href="#projetos">Projetos</a>
+          <a href="#energia-solar">Energia Solar</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#pagamento">Pagamento</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <a class="primary-cta nav-cta" href="https://wa.me/556384186441" target="_blank" rel="noopener">
+          <svg class="whatsapp-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+          Falar no WhatsApp
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu-mobile" aria-expanded="false" data-menu-toggle>
+          <span class="menu-lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-panel" id="menu-mobile" data-mobile-panel aria-hidden="true" inert>
+      <nav aria-label="Navegação mobile">
+        <a href="#projetos">Projetos</a>
+        <a href="#energia-solar">Energia Solar</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#pagamento">Pagamento</a>
+        <a href="#contato">Contato</a>
+        <a class="text-link" href="https://wa.me/556384186441" target="_blank" rel="noopener">Falar no WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <picture class="hero-background">
+          <!-- Adicionar aqui a source desktop quando a foto aérea original for fornecida. -->
+          <img class="hero-background-photo" src="assets/FOTO%20SECTION%20PRINCIPAL.png" alt="" width="960" height="1280" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="hero-content">
+          <div class="hero-copy reveal-group">
+            <span class="eyebrow reveal">Energia solar em Palmas &middot; Todo o Tocantins</span>
+            <h1 class="reveal" id="hero-title"><span class="hero-line"><span class="hero-highlight">Economia</span> e <span class="hero-highlight">valorização</span></span> <span class="hero-line">do seu patrimônio</span> <span class="hero-line">com um só investimento.</span></h1>
+            <p class="hero-description reveal">Projetamos e instalamos sistemas de energia solar para residências e empresas no Tocantins.</p>
+            <div class="hero-actions reveal">
+              <a class="primary-cta" href="https://wa.me/556384186441" target="_blank" rel="noopener">
+                <svg class="whatsapp-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                Solicitar orçamento
+              </a>
+              <a class="hero-projects-cta" href="#projetos">Ver Nossos Trabalhos</a>
+            </div>
+            <dl class="hero-stats reveal" data-hero-stats hidden>
+              <div class="hero-stat" data-stat="projects" hidden><dt>PROJETOS INSTALADOS</dt><dd data-stat-value></dd></div>
+              <div class="hero-stat" data-stat="rating" hidden><dt>AVALIAÇÃO DOS CLIENTES</dt><dd data-stat-value></dd></div>
+              <div class="hero-stat" data-stat="warranty" hidden><dt>GARANTIA NO SERVIÇO</dt><dd data-stat-value></dd></div>
+            </dl>
+            <a class="scroll-indicator" href="#projetos" aria-label="Ver os projetos da Gold Soluções"></a>
+          </div>
+          <form class="hero-quote reveal" id="hero-quote" aria-labelledby="hero-form-title">
+            <h2 id="hero-form-title">Receba seu orçamento</h2>
+            <p class="hero-form-intro">Resposta rápida pelo WhatsApp</p>
+            <label class="hero-field-label" for="hero-name">SEU NOME</label>
+            <input class="hero-name" id="hero-name" name="name" type="text" placeholder="Como podemos te chamar?" autocomplete="given-name" maxlength="100">
+            <div class="hero-services">
+              <label class="hero-field-label" for="hero-service">SERVIÇO</label>
+              <input class="hero-name" id="hero-service" name="service" type="text" value="Energia Solar" readonly>
+            </div>
+            <button class="primary-cta" type="submit">
+              <svg class="whatsapp-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Solicitar orçamento
+            </button>
+            <p class="hero-form-note">Sem compromisso. Você fala direto com nossa equipe.</p>
+          </form>
+          <div class="hero-payment-bar reveal" role="group" aria-labelledby="hero-payment-title">
+            <h2 class="hero-payment-label" id="hero-payment-title">ADQUIRA COM O PAGAMENTO FACILITADO:</h2>
+            <ul class="hero-payment-list">
+              <li><svg class="payment-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-financing"></use></svg><span>Financiamento em até 120 meses</span></li>
+              <li><svg class="payment-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-grace-period"></use></svg><span>Até 5 meses de carência</span></li>
+              <li><svg class="payment-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-credit-card"></use></svg><span>Cartão de crédito em até 21x</span></li>
+              <li><svg class="payment-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-cash-payment"></use></svg><span>À vista</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projetos" aria-labelledby="projects-title">
+        <div class="site-shell">
+          <div class="section-heading reveal">
+            <span class="eyebrow">PROJETOS REALIZADOS</span>
+            <h2 id="projects-title">Veja alguns trabalhos da Gold Soluções.</h2>
+            <p>Instalações realizadas em residências e empresas.</p>
+          </div>
+
+          <div class="projects-grid reveal-group" aria-label="Galeria de projetos">
+            <figure class="project-cell reveal">
+              <div class="photo-frame" data-photo-slot="project-1"><div class="project-placeholder"><span>[ FOTO DO PROJETO ]</span></div></div>
+              <figcaption class="project-caption"><span class="project-category">ENERGIA SOLAR</span><h3>Residencial</h3></figcaption>
+            </figure>
+            <figure class="project-cell reveal">
+              <div class="photo-frame" data-photo-slot="project-3"><div class="project-placeholder"><span>[ FOTO DO PROJETO ]</span></div></div>
+              <figcaption class="project-caption"><span class="project-category">ENERGIA SOLAR</span><h3>Comercial</h3></figcaption>
+            </figure>
+            <figure class="project-cell reveal">
+              <div class="photo-frame" data-photo-slot="project-5"><div class="project-placeholder"><span>[ FOTO DO PROJETO ]</span></div></div>
+              <figcaption class="project-caption"><span class="project-category">ENERGIA SOLAR</span><h3>Residencial</h3></figcaption>
+            </figure>
+          </div>
+
+          <div class="section-tail reveal">
+            <a class="text-link" href="https://wa.me/556384186441" target="_blank" rel="noopener">Quero um projeto como esse <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section surface" id="energia-solar" aria-labelledby="solar-title">
+        <div class="site-shell solar-layout">
+          <div class="section-heading reveal">
+            <span class="eyebrow">ENERGIA SOLAR</span>
+            <h2 id="solar-title">Por que produzir sua própria energia?</h2>
+            <div class="section-tail">
+              <a class="text-link" href="https://wa.me/556384186441" target="_blank" rel="noopener"><span>Quero saber se energia solar vale a pena para mim</span> <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="benefits-list reveal-group">
+            <article class="benefit-item reveal">
+              <span class="benefit-number" aria-hidden="true">01</span>
+              <div><h3>Economia de até 95% na conta de luz</h3><p>Produza parte da energia que seu imóvel consome e reduza significativamente o valor pago à distribuidora.</p></div>
+            </article>
+            <article class="benefit-item reveal">
+              <span class="benefit-number" aria-hidden="true">02</span>
+              <div><h3>Seu imóvel pode valorizar em até 10%</h3><p>A instalação de energia solar agrega um sistema de geração própria ao imóvel e pode aumentar sua atratividade e valor de mercado.</p></div>
+            </article>
+            <article class="benefit-item reveal">
+              <span class="benefit-number" aria-hidden="true">03</span>
+              <div><h3>Baixa manutenção</h3><p>O sistema fotovoltaico funciona de forma automática e exige pouca intervenção no uso diário.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials-section" id="depoimentos" aria-labelledby="testimonials-title">
+        <div class="site-shell">
+          <div class="section-heading reveal">
+            <span class="eyebrow">DEPOIMENTOS</span>
+            <h2 id="testimonials-title">Quem já confia na <span>Gold.</span></h2>
+            <p>Experiências de clientes de Tocantins atendidos pela Gold Soluções.</p>
+          </div>
+          <div class="testimonials-grid reveal-group" data-testimonials hidden></div>
+          <div class="testimonials-grid reveal-group" data-testimonials-pending aria-label="Depoimentos de clientes">
+            <article class="testimonial-card testimonial-card--pending reveal" data-testimonial-confirmed style="align-self: start;" aria-label="Depoimento de cliente residencial">
+              <!-- Avaliações confirmadas pelo responsável pela Gold em 01/10/2026. -->
+              <div class="testimonial-card-head">
+                <div class="testimonial-stars" role="img" aria-label="5 de 5 estrelas">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                </div>
+                <span class="testimonial-quotation" aria-hidden="true">“</span>
+              </div>
+              <blockquote><p data-quote>Minha conta de luz vinha aumentando todo mês e eu já estava procurando uma solução. A equipe da Gold fez a avaliação, explicou quanto eu precisava gerar e deixou tudo funcionando direitinho. Depois da instalação, a diferença na conta foi grande.</p></blockquote>
+              <div class="testimonial-customer"><span data-customer>Felipe Santos</span><span class="testimonial-context" data-context>Residencial · Energia Solar</span></div>
+            </article>
+            <article class="testimonial-card testimonial-card--pending reveal" data-testimonial-confirmed style="align-self: start;" aria-label="Depoimento de cliente residencial">
+              <div class="testimonial-card-head">
+                <div class="testimonial-stars" role="img" aria-label="5 de 5 estrelas">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                </div>
+                <span class="testimonial-quotation" aria-hidden="true">“</span>
+              </div>
+              <blockquote><p data-quote>Eu tinha bastante dúvida sobre energia solar e principalmente sobre o retorno do investimento. A equipe explicou o projeto, mostrou o que seria instalado e deixou tudo funcionando certinho.</p></blockquote>
+              <div class="testimonial-customer"><span data-customer>Paulo Cesar</span><span class="testimonial-context" data-context>Residencial · Energia Solar</span></div>
+            </article>
+            <article class="testimonial-card testimonial-card--pending reveal" data-testimonial-confirmed style="align-self: start;" aria-label="Depoimento de cliente comercial">
+              <div class="testimonial-card-head">
+                <div class="testimonial-stars" role="img" aria-label="5 de 5 estrelas">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-star"></use></svg>
+                </div>
+                <span class="testimonial-quotation" aria-hidden="true">“</span>
+              </div>
+              <blockquote><p data-quote>O que mais gostei foi o atendimento direto. Não fiquei falando com várias pessoas diferentes. Tiraram minhas dúvidas, fizeram a instalação e depois continuaram disponíveis quando precisei.</p></blockquote>
+              <div class="testimonial-customer"><span data-customer>André Lima</span><span class="testimonial-context" data-context>Comercial · Segurança Eletrônica</span></div>
+            </article>
+          </div>
+          <template id="testimonial-template">
+            <article class="testimonial-card reveal">
+              <div class="testimonial-card-head">
+                <div class="testimonial-stars" data-rating hidden></div>
+                <span class="testimonial-quotation" aria-hidden="true">“</span>
+              </div>
+              <blockquote><p data-quote></p></blockquote>
+              <div class="testimonial-customer"><span data-customer></span><span class="testimonial-context" data-context hidden></span></div>
+            </article>
+          </template>
+          <div class="section-tail reveal">
+            <a class="text-link" href="https://wa.me/556384186441" target="_blank" rel="noopener">Falar com nossa equipe <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" id="contato" aria-labelledby="contact-title">
+        <div class="site-shell">
+          <div class="reveal">
+            <span class="eyebrow">FALE COM A GOLD SOLUÇÕES</span>
+            <h2 id="contact-title">Vamos tirar seu projeto do papel?</h2>
+            <p>Conte o que você precisa e fale diretamente com nossa equipe pelo WhatsApp.</p>
+          </div>
+          <div class="final-action reveal">
+            <a class="dark-cta" href="https://wa.me/556384186441" target="_blank" rel="noopener">
+              <svg class="whatsapp-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Solicitar meu orçamento
+            </a>
+            <p class="service-area">Atendemos residências e empresas em Palmas, Porto Nacional, Paraíso do Tocantins, Araguaína, Gurupi, Colinas do Tocantins, Miracema do Tocantins, Dianópolis, Araguatins e Guaraí.</p>
+            <div class="final-payment" id="pagamento" role="group" aria-labelledby="final-payment-title">
+              <h3 id="final-payment-title">Pagamento facilitado</h3>
+              <ul class="final-payment-list">
+                <li><svg class="payment-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-financing"></use></svg><span>Financiamento em até 120 meses</span></li>
+                <li><svg class="payment-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-grace-period"></use></svg><span>Até 5 meses de carência</span></li>
+                <li><svg class="payment-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-credit-card"></use></svg><span>Cartão de crédito em até 21x</span></li>
+                <li><svg class="payment-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-cash-payment"></use></svg><span>À vista</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="site-shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand-link" href="#inicio" aria-label="Gold Soluções, início">
+              <img class="logo-img" src="assets/logo.png" alt="Gold Soluções" width="120" height="80" loading="lazy" decoding="async">
+            </a>
+            <p>Energia Solar</p>
+          </div>
+
+          <div>
+            <h3>Links</h3>
+            <nav class="footer-links" aria-label="Links do rodapé">
+              <a href="#projetos">Projetos</a>
+              <a href="#energia-solar">Energia Solar</a>
+              <a href="#depoimentos">Depoimentos</a>
+              <a href="#pagamento">Pagamento</a>
+              <a href="#contato">Contato</a>
+            </nav>
+          </div>
+
+          <div>
+            <h3>Contato</h3>
+            <div class="contact-links">
+              <a href="tel:+556384186441" aria-label="Ligar para a Gold Soluções no telefone +55 63 8418-6441">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>
+                +55 63 8418-6441
+              </a>
+              <a href="https://wa.me/556384186441" target="_blank" rel="noopener" aria-label="WhatsApp da Gold Soluções">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="footer-bottom">© <span data-year>2026</span> Gold Soluções. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <a class="floating-whatsapp" href="https://wa.me/556384186441" target="_blank" rel="noopener" aria-label="Falar com a Gold Soluções pelo WhatsApp" title="Falar no WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+    </a>
+
+    <!-- Preencha somente com fotos e dados reais aprovados pela Gold. -->
+    <script type="application/json" id="gold-content">
+      {
+        "photos": {
+          "project-1": {
+            "confirmed": true,
+            "src": "assets/projeto-residencial-1.jfif",
+            "alt": "Vista aérea de sistema solar residencial instalado sobre telhado metálico."
+          },
+          "project-3": {
+            "confirmed": true,
+            "src": "assets/projeto-comercial.jfif",
+            "alt": "Vista aérea de sistema solar comercial com painéis instalados em estrutura no solo."
+          },
+          "project-5": {
+            "confirmed": true,
+            "src": "assets/projeto-residencial-2.jfif",
+            "alt": "Vista aérea de painéis solares instalados no telhado de uma residência."
+          }
+        },
+        "testimonials": []
+      }
+    </script>
+    <script>
+      // Preencha apenas com números reais confirmados pela Gold.
+      const companyStats = { projects: '', rating: '', warranty: '' };
+      const heroWhatsApp = 'https://wa.me/556384186441';
+
+      document.documentElement.classList.add('js');
+
+      const header = document.querySelector('[data-header]');
+      const menuToggle = document.querySelector('[data-menu-toggle]');
+      const mobilePanel = document.querySelector('[data-mobile-panel]');
+      const main = document.querySelector('main');
+      const footer = document.querySelector('footer');
+      const content = JSON.parse(document.getElementById('gold-content').textContent);
+      const hasText = (value) => typeof value === 'string' && value.trim().length > 0;
+
+      const heroStats = document.querySelector('[data-hero-stats]');
+      const statSuffixes = { projects: '+', rating: '★', warranty: '%' };
+      Object.entries(companyStats).forEach(([key, value]) => {
+        if (!hasText(value) || !/^\d+(?:[.,]\d+)?$/.test(value.trim())) return;
+        const number = Number(value.trim().replace(',', '.'));
+        if (number <= 0 || (key === 'rating' && number > 5) || (key === 'warranty' && number > 100) || (key === 'projects' && !Number.isInteger(number))) return;
+        const item = heroStats.querySelector(`[data-stat="${key}"]`);
+        item.querySelector('[data-stat-value]').textContent = `${value.trim()}${statSuffixes[key]}`;
+        item.hidden = false;
+        heroStats.hidden = false;
+      });
+
+      function createHeroWhatsAppUrl(name) {
+        const service = 'Energia Solar';
+        const cleanName = name.trim();
+        const message = cleanName
+          ? `Olá, me chamo ${cleanName}. Gostaria de solicitar um orçamento para ${service}.`
+          : `Olá, gostaria de solicitar um orçamento para ${service}.`;
+        return `${heroWhatsApp}?text=${encodeURIComponent(message)}`;
+      }
+
+      document.getElementById('hero-quote').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const name = form.elements.namedItem('name').value;
+        window.open(createHeroWhatsAppUrl(name), '_blank', 'noopener,noreferrer');
+      });
+
+      document.querySelector('[data-year]').textContent = new Date().getFullYear();
+
+      document.querySelectorAll('.logo-img').forEach((image) => {
+        image.addEventListener('error', () => { image.hidden = true; });
+      });
+
+      function createTestimonial(item) {
+        if (!item || item.confirmed !== true || !hasText(item.quote) || !hasText(item.name)) return null;
+        const card = document.getElementById('testimonial-template').content.firstElementChild.cloneNode(true);
+        card.querySelector('[data-quote]').textContent = item.quote.trim();
+        card.querySelector('[data-customer]').textContent = item.name.trim();
+        const context = [item.projectType, item.city].filter(hasText).map((value) => value.trim()).join(' · ');
+        if (context) {
+          card.querySelector('[data-context]').textContent = context;
+          card.querySelector('[data-context]').hidden = false;
+        }
+        if (Number.isInteger(item.rating) && item.rating >= 1 && item.rating <= 5) {
+          const stars = card.querySelector('[data-rating]');
+          stars.hidden = false;
+          stars.setAttribute('role', 'img');
+          stars.setAttribute('aria-label', `${item.rating} de 5 estrelas`);
+          for (let index = 0; index < 5; index++) {
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('viewBox', '0 0 24 24');
+            svg.setAttribute('aria-hidden', 'true');
+            const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+            use.setAttribute('href', '#icon-star');
+            svg.append(use);
+            if (index >= item.rating) svg.style.opacity = '0.2';
+            stars.append(svg);
+          }
+        }
+        return card;
+      }
+
+      function renderConfirmedItems(items, selector, createItem) {
+        const container = document.querySelector(selector);
+        if (!Array.isArray(items)) return;
+        items.forEach((item) => {
+          const element = createItem(item);
+          if (element) container.append(element);
+        });
+        container.hidden = !container.childElementCount;
+      }
+
+      renderConfirmedItems(content.testimonials, '[data-testimonials]', createTestimonial);
+      document.querySelector('[data-testimonials-pending]').hidden = document.querySelector('[data-testimonials]').childElementCount > 0;
+
+      document.querySelectorAll('[data-photo-slot]').forEach((frame) => {
+        const photo = content.photos[frame.dataset.photoSlot];
+        if (!photo || photo.confirmed !== true || !hasText(photo.src) || !hasText(photo.alt)) return;
+        const image = new Image();
+        image.alt = photo.alt.trim();
+        image.decoding = 'async';
+        image.loading = frame.dataset.photoSlot === 'hero' ? 'eager' : 'lazy';
+        if (frame.dataset.photoSlot === 'hero') image.fetchPriority = 'high';
+        image.addEventListener('load', () => { frame.querySelector('.project-placeholder').hidden = true; });
+        image.addEventListener('error', () => { image.remove(); });
+        const assetPath = location.protocol === 'file:' ? photo.src.replace(/^\//, './') : photo.src;
+        image.src = new URL(assetPath, document.baseURI).href;
+        frame.append(image);
+      });
+
+      function setScrolledState() {
+        const isScrolled = window.scrollY > 12;
+        header.classList.toggle('is-scrolled', isScrolled);
+      }
+
+      function closeMenu(restoreFocus = false) {
+        const wasOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
+        mobilePanel.setAttribute('aria-hidden', 'true');
+        mobilePanel.inert = true;
+        main.inert = false;
+        footer.inert = false;
+        mobilePanel.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+        if (wasOpen && restoreFocus) menuToggle.focus();
+      }
+
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          closeMenu(true);
+          return;
+        }
+        menuToggle.setAttribute('aria-expanded', 'true');
+        menuToggle.setAttribute('aria-label', 'Fechar menu');
+        mobilePanel.inert = false;
+        mobilePanel.setAttribute('aria-hidden', 'false');
+        main.inert = true;
+        footer.inert = true;
+        mobilePanel.classList.add('is-open');
+        document.body.classList.add('menu-open');
+        mobilePanel.querySelector('a').focus();
+      });
+
+      mobilePanel.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => closeMenu());
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (menuToggle.getAttribute('aria-expanded') !== 'true') return;
+        if (event.key === 'Escape') {
+          closeMenu(true);
+        }
+        if (event.key === 'Tab') {
+          const links = [menuToggle, ...mobilePanel.querySelectorAll('a'), document.querySelector('.floating-whatsapp')];
+          const index = links.indexOf(document.activeElement);
+          const next = event.shiftKey ? (index - 1 + links.length) % links.length : (index + 1) % links.length;
+          event.preventDefault();
+          links[next].focus();
+        }
+      });
+
+      window.matchMedia('(min-width: 1180px)').addEventListener('change', (event) => {
+        if (event.matches) closeMenu();
+      });
+      window.addEventListener('scroll', setScrolledState, { passive: true });
+      setScrolledState();
+
+      const observer = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 }) : null;
+
+      document.querySelectorAll('.reveal').forEach((el) => {
+        if (observer) observer.observe(el);
+        else el.classList.add('revealed');
+      });
+    </script>
+  </body>
+</html>
